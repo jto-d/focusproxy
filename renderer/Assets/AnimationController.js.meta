@@ -1,0 +1,47 @@
+- !<AssetImportMetadata/9a428c3e-e7c6-4d29-9778-c442c9e53d26>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 6e8bca39-6c81-4811-864a-3cdb845717c2
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 6e8bca39-6c81-4811-864a-3cdb845717c2
+  PackageType: NotAPackage
+  PackagePolicy: CannotBeUnpacked
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> 4c9bd852-8845-492c-85ab-32a731e4f088
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/4c9bd852-8845-492c-85ab-32a731e4f088>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 82e7c78a-4f22-4b7f-bfca-591f2e4b9cb5
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  CurrentVisibility: Editable
+  MaxVisibility: Editable
+  ScriptInputsHidden:
+    animManager: false
+    blend: false
+    durationsCSV: false
+    loop: false
+    statesCSV: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  DefaultScriptInputs:
+    - animManager: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      statesCSV: "idle_stretch,typing_loop,seated_idle"
+      durationsCSV: "2,10,20"
+      blend: 0.250000
+      loop: true
+  ScriptTypes:
+    -
+      {}
