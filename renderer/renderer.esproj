@@ -27,16 +27,16 @@ metaInfo:
     []
   tags:
     []
-  lensName: Specs Starter
+  lensName: FocusProxy
   lensDescriptors:
-    []
+    - GEN_AI_ICON
   lensApplicability:
     - Front
     - Back
   lensClientCompatibilities:
     - Spectacles
   platformBundlesEnabled: false
-  iconHash: ""
+  iconHash: 9370602fc16de1933541dd85d27b1ca7
   videoPreviewHash: ""
   fromTemplateName: Spectacles
   fromTemplateUrl: Lens Studio 5.12.1.25080420
