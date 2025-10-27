@@ -3,6 +3,10 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 current_activity = {"state": "idle"}
 
+@app.route('/', methods=['GET'])
+def get_root():
+  return jsonify(message="Hello, World!")
+
 @app.route('/activity', methods=['GET'])
 def get_activity():
   return jsonify(current_activity)
