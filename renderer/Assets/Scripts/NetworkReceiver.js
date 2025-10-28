@@ -16,7 +16,6 @@ function pollActivity() {
                 if (data.state) {
                     print("Received activity: " + data.state);
                     
-                    // safety check before calling
                     global.setActivity(data.state.toLowerCase());
                 }
             } catch (err) {

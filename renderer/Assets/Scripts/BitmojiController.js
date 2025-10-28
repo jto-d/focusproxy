@@ -1,5 +1,6 @@
 //@input Component.ScriptComponent animManager
 //@input string currentState = "typing"
+//@input SceneObject bookObject
 
 var animMap = {
     "chatting": "Chatting",
@@ -8,16 +9,27 @@ var animMap = {
     "reading": "Reading"
 };
 
+// hide the book at startup
+//if (script.bookObject) {
+//    script.bookObject.enabled = false;
+//}
+
 script.animManager.setState('Typing', 0);
 
 function setActivity(activity) {
     if (animMap[activity]) {
         script.animManager.setState(animMap[activity], 0);
         print(animMap[activity]);
-//        script.bitmoji.getComponent("AnimationMixer").play(animMap[activity]);
+        
+//        if (script.bookObject) {
+//            if (activity === "reading") {
+//                script.bookObject.enabled = true;
+//            } else {
+//                script.bookObject.enabled = false;
+//            }
+//        }
     } else {
         print("MEOWMEOWMEOW")
-//        script.bitmoji.getComponent("AnimationMixer").play(animMap["idle"]);
     }
 }
 

@@ -28,6 +28,7 @@
   MaxVisibility: Editable
   ScriptInputsHidden:
     animManager: false
+    bookObject: false
     currentState: false
   ScriptTypesHidden:
     {}
@@ -36,6 +37,7 @@
   DefaultScriptInputs:
     - animManager: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       currentState: idle
+      bookObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
