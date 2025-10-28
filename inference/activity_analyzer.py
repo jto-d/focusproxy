@@ -21,12 +21,15 @@ class ActivityAnalyzer:
         """Analyze screenshot and return activity description"""
         
         # Default prompt for activity recognition
-        default_prompt = """Analyze this screenshot and provide a brief, clear description of what the user is doing. Focus on:
+        default_prompt = """Analyze this screenshot and provide a single lowercase words that describes the user's primary activity. Focus on:
         - What application or website they're using
         - What specific task or activity they appear to be engaged in
         - Their level of focus/attention (focused work, browsing, distracted, etc.)
         
-        Keep the response concise (1-2 sentences) and objective."""
+        Choose only from this list (or the closest match): 
+        reading, writing, coding, browsing, watching, chatting, idle.
+
+        Return ONLY the single word, no punctuation or explanation."""
         
         prompt = custom_prompt or default_prompt
         
