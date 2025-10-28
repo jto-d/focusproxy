@@ -1,22 +1,37 @@
+//@input Asset.InternetModule serviceModule
 //@input string apiEndpoint
 
-var request = XMLHttpRequest();
-var checkInterval = 5000;
+var pollInterval = 10.0;
+var lastPoll = 0.0;
 
-function checkActivity() {
-    request.open("GET", script.apiEndpoint, true);
-    request.onreadystatechange = function () {
-        if (request.readyState === 4 && request.status === 200) {
-            var data = JSON.parse(request.responseText);
-            if (data.activity) {
-                global.setActivity(data.activity);
+function pollActivity() {
+    var req = RemoteServiceHttpRequest.create();
+    req.url = script.apiEndpoint;
+    req.method = RemoteServiceHttpRequest.HttpRequestMethod.Get;
+    
+    script.serviceModule.performHttpRequest(req, function (res) {
+        if (res.statusCode === 200) {
+            try {
+                var data = JSON.parse(res.body);
+                if (data.state) {
+                    print("Received activity: " + data.state);
+                    
+                    // safety check before calling
+                    global.setActivity(data.state.toLowerCase());
+                }
+            } catch (err) {
+                print("Error parsing response: " + err);
             }
+        } else {
+            print("HTTP error " + res.statusCode + ": " + res.body);
         }
-    };
-    request.send();
+    });
 }
 
-var interval = script.createEvent("UpdateEvent");
-interval.bind(function () {
-    if (getTime() % checkInterval < 0.1) checkActivity();
-})
+var updateEvent = script.createEvent("UpdateEvent");
+updateEvent.bind(function (eventData) {
+    if (getTime() - lastPoll > pollInterval) {
+        pollActivity();
+        lastPoll = getTime();
+    }
+});

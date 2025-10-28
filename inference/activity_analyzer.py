@@ -27,7 +27,7 @@ class ActivityAnalyzer:
         - Their level of focus/attention (focused work, browsing, distracted, etc.)
         
         Choose only from this list (or the closest match): 
-        reading, writing, coding, browsing, watching, chatting, idle.
+        reading, writing, typing, watching, chatting, idle.
 
         Return ONLY the single word, no punctuation or explanation."""
         

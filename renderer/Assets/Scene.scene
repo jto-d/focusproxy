@@ -9,6 +9,7 @@
     - !<own> 705b3303-959e-4f10-babe-6a25e1619be6
     - !<own> a30bf263-b481-4ea1-b418-8dc736b4e67c
     - !<own> 1ce78114-a1d3-45fd-a9ec-15f1b491dd79
+    - !<own> ec2350ba-9e5c-4072-97dd-ed6073f6ef09
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
       []
@@ -176,6 +177,21 @@
   DecayType: None
   DecayLimit: false
   DecayRange: 40.000000
+- !<SceneObject/00766997-5d06-432f-9849-f9a263970617>
+  PrefabRemaps:
+    []
+  Name: AnimationController
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 309a0871-8739-4114-97f2-8dedbcc2ff51
 - !<SceneObject/00fdb93a-85d7-4497-9622-9fad02238fc3>
   PrefabRemaps:
     []
@@ -266,7 +282,7 @@
     - fcfeeee4-8f8a-4966-8e3a-495c66281091: 84fc3dea-3e7e-42c1-b914-24547469a662
     - fd67e01d-e5f0-437a-add0-e249c9d1d794: 215883e9-4aec-42e8-a571-cefdec285944
   Name: Seated Idle
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -340,6 +356,22 @@
     - !<own> 2ec36495-c888-42de-a3bb-102c8bbcc6f2
   Components:
     []
+- !<ScriptComponent/06b3eba3-c799-44b4-949b-166218bf134c>
+  PrefabRemaps:
+    []
+  Name: PlayAnimation
+  Enabled: true
+  ScriptAsset: !<reference> cf43966b-8eed-4c83-afce-04bc0d28fc64
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      {}
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/0b5f0fa2-1a7d-4e31-ae8d-c0330ed1e3a2>
   PrefabRemaps:
     []
@@ -664,7 +696,7 @@
   PrefabRemaps:
     []
   Name: AnimationController
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1212,6 +1244,30 @@
     - !<own> b6967747-d54d-4fdf-b8cc-652d7e6080ba
   Components:
     []
+- !<ScriptComponent/309a0871-8739-4114-97f2-8dedbcc2ff51>
+  PrefabRemaps:
+    []
+  Name: AnimationController
+  Enabled: true
+  ScriptAsset: !<reference> 6e8bca39-6c81-4811-864a-3cdb845717c2
+  ScriptInputsDefault:
+    animManager: true
+    statesCSV: true
+    durationsCSV: true
+    blend: true
+    loop: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      animManager: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      statesCSV: "idle_stretch,typing_loop,seated_idle"
+      durationsCSV: "2,10,20"
+      blend: 0.250000
+      loop: true
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/316e962b-fa2c-466e-b72a-177a5095cc0a>
   PrefabRemaps:
     []
@@ -2502,6 +2558,21 @@
     RedPanda: !<reference> 942b3fc1-6bd5-4090-99e7-e966869052b5
     left_leg_T_JNT: !<reference> ad30b69b-de67-4902-ac5e-7cd5dbfa34b5
     tail_07_JNT: !<reference> 6f7a25c0-55ea-44d3-b63d-726ea146268c
+- !<SceneObject/63133882-02b8-4a96-b838-9c865649ea9c>
+  PrefabRemaps:
+    []
+  Name: BitmojiController
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b5aaba66-daad-45ba-affe-70458da46759
 - !<SceneObject/63c61453-7d21-4be9-b9b0-0e21abe9eb38>
   PrefabRemaps:
     []
@@ -3154,6 +3225,38 @@
     []
   Components:
     []
+- !<ScriptComponent/8d5c1966-90cf-456f-8b79-1be28e8830a4>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 3D
+  Enabled: true
+  ScriptAsset: !<reference> 7a3c78c1-4ff4-41a1-9f38-a2b9e6360f03
+  ScriptInputsDefault:
+    bitmojiType: true
+    friendsComponent: true
+    friendIndex: true
+    mixamoAnimation: true
+    autoDownload: true
+    renderOrder: true
+    castShadow: true
+    materialHolder: true
+    printDebug: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      bitmojiType: !<float> 0.000000
+      friendsComponent: !<reference.Component> 00000000-0000-0000-0000-000000000000
+      friendIndex: 0
+      mixamoAnimation: true
+      autoDownload: true
+      renderOrder: 0
+      castShadow: true
+      materialHolder: !<reference.Material> 40b3147b-e211-4919-9ba0-bedd05c60132
+      printDebug: false
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/8de167ab-94ee-4029-b688-0b1c1163843a>
   PrefabRemaps:
     []
@@ -4013,6 +4116,23 @@
   ScriptTypes:
     "":
       {}
+- !<ScriptComponent/b5aaba66-daad-45ba-affe-70458da46759>
+  PrefabRemaps:
+    []
+  Name: BitmojiController
+  Enabled: true
+  ScriptAsset: !<reference> 8d950316-ea9a-464c-801c-eddae6cf6506
+  ScriptInputsDefault:
+    currentState: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      animManager: !<reference.ScriptComponent> e259e255-20dc-44e9-aa88-85d550da433e
+      currentState: idle
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/b62fceb4-d6d3-4068-ab78-d2835e91573c>
   PrefabRemaps:
     []
@@ -4103,6 +4223,23 @@
     - !<own> ed7074f4-802d-4336-9588-237c5c48f33e
   Components:
     []
+- !<ScriptComponent/b9a88301-018d-45df-b586-03cfcf038db5>
+  PrefabRemaps:
+    []
+  Name: NetworkReceiver
+  Enabled: true
+  ScriptAsset: !<reference> 9d925a82-a3bc-438b-8623-a0d12148146b
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      serviceModule: !<reference.InternetModule> 9ae42eea-c8cc-4eb5-b689-8d538e92aa2d
+      apiEndpoint: "https://focusproxy-production.up.railway.app/activity"
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/ba323c77-c823-4e79-ba98-037ea24519de>
   PrefabRemaps:
     []
@@ -4178,6 +4315,21 @@
     []
   Components:
     []
+- !<SceneObject/be66013c-317b-49c1-9385-d3705288ec4c>
+  PrefabRemaps:
+    []
+  Name: PlayAnimation
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 06b3eba3-c799-44b4-949b-166218bf134c
 - !<AnimationPlayer/c16e1152-e6e6-4f2b-b96e-76c0147f2af5>
   PrefabRemaps:
     []
@@ -4357,6 +4509,21 @@
     ring-3_end_end_end: !<reference> b6967747-d54d-4fdf-b8cc-652d7e6080ba
     thumb-3_end_end_end_end: !<reference> 1a90888e-d4d2-4c81-b8cb-9e2370b94e8a
     pinky-3_end_end: !<reference> 319c29db-cd9c-448c-8028-20ef49b55a70
+- !<SceneObject/c850434e-bbee-4754-aee5-3d5b8eedb5d3>
+  PrefabRemaps:
+    []
+  Name: NetworkReceiver
+  Enabled: false
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b9a88301-018d-45df-b586-03cfcf038db5
 - !<SceneObject/c89d7e48-75a6-414e-a253-874f80bfe792>
   PrefabRemaps:
     []
@@ -4913,6 +5080,7 @@
     advanced: true
     tempInput: true
     editAnimationStates: true
+    transitions: true
     showDebug: true
     debugText: true
     displayParameters: true
@@ -4933,20 +5101,13 @@
         funcBool: IsLess
         valueInt: 0
         valueFloat: !<float> 0.000000
-      animationPlayer: !<reference.AnimationPlayer> fcb3ae37-b86a-4671-8f19-41ea397bfdd6
+      animationPlayer: !<reference.AnimationPlayer> fa4049c8-9004-498d-a5c6-c831c59a61ce
       editAnimationStates: true
       createStatesFromClips: true
       states:
         - stateName: typing
           source: 0
           clipName: typing_loop
-          blendTreeClips:
-            []
-          normalizeClipDuration: false
-          blendParameterName: ""
-        - stateName: stretching
-          source: 0
-          clipName: idle_stretch
           blendTreeClips:
             []
           normalizeClipDuration: false
@@ -4968,32 +5129,7 @@
           valueTrigger: false
       editTransitions: true
       transitions:
-        - enabled: true
-          fromStateType: -1
-          fromStateName: ""
-          toStateType: 0
-          toStateName: idle
-          duration: !<float> 0.000000
-          hasExitTime: false
-          exitTime: !<float> 1.000000
-          conditions:
-            []
-        - enabled: true
-          fromStateType: 0
-          fromStateName: idle
-          toStateType: 0
-          toStateName: typing
-          duration: 0.200000
-          hasExitTime: false
-          exitTime: !<float> 1.000000
-          conditions:
-            - paramName: isTyping
-              type: Bool
-              funcInt: Equal
-              funcFloat: IsLess
-              funcBool: IsTrue
-              valueInt: 0
-              valueFloat: !<float> 0.000000
+        []
       showDebug: false
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       displayParameters: false
@@ -5191,6 +5327,25 @@
     - !<own> f93f93ae-a62d-4b7f-b140-6ffe16bdc7c9
   Components:
     []
+- !<SceneObject/ec2350ba-9e5c-4072-97dd-ed6073f6ef09>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 3D
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 00766997-5d06-432f-9849-f9a263970617
+    - !<own> 63133882-02b8-4a96-b838-9c865649ea9c
+    - !<own> c850434e-bbee-4754-aee5-3d5b8eedb5d3
+    - !<own> be66013c-317b-49c1-9385-d3705288ec4c
+  Components:
+    - !<own> 8d5c1966-90cf-456f-8b79-1be28e8830a4
+    - !<own> fa4049c8-9004-498d-a5c6-c831c59a61ce
 - !<SceneObject/ec5cf781-7365-4db2-83df-e3d10556ffd3>
   PrefabRemaps:
     []
@@ -6049,6 +6204,27 @@
     - !<own> 9f0044f4-c352-432b-9e21-0166613b38ab
   Components:
     []
+- !<AnimationPlayer/fa4049c8-9004-498d-a5c6-c831c59a61ce>
+  PrefabRemaps:
+    []
+  Name: Animation Player
+  Enabled: true
+  Autoplay: true
+  ClipRangeType: Seconds
+  AnimationClips:
+    - !<AnimationClip>
+      AnimationAsset: !<reference> 0eba09b5-41d9-4cf5-b3a8-4156d0b00195
+      Name: typing_loop
+      Weight: 1.000000
+      PlaybackSpeed: 1.000000
+      Begin: 0.000000
+      End: 16.466667
+      Offset: 0.000000
+      Reversed: false
+      Disabled: false
+      BlendMode: Default
+      ScaleMode: Multiply
+      PlaybackMode: Loop
 - !<SceneObject/fc530e67-51dc-4b55-8306-a92acdd025f6>
   PrefabRemaps:
     []
