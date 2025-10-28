@@ -1,18 +1,18 @@
 //@input Component.ScriptComponent animManager
-//@input string currentState = "idle"
+//@input string currentState = "typing"
 
 var animMap = {
-    "reading": "Reading",
-    "typing": "typing_loop",
-    "stretching": "Stretching",
-    "idle": "Idle"
+    "chatting": "Chatting",
+    "typing": "Typing",
+    "relaxing": "Relaxing",
+    "reading": "Reading"
 };
 
-script.animManager.setState('idle', 0);
+script.animManager.setState('Typing', 0);
 
 function setActivity(activity) {
     if (animMap[activity]) {
-        script.animManager.setState('typing_loop', 1);
+        script.animManager.setState(animMap[activity], 0);
         print(animMap[activity]);
 //        script.bitmoji.getComponent("AnimationMixer").play(animMap[activity]);
     } else {
