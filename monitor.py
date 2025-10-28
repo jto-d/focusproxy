@@ -61,12 +61,10 @@ class MonitorService:
         except Exception as e:
             print(f"[{datetime.now()}] Error: {str(e)}")
     
-    def run(self, interval_minutes: int = 5):
+    def run(self, interval_seconds: int = 60):
         """Run the monitor continuously"""
-        # interval_seconds = interval_minutes * 60
-        interval_seconds = 20
         
-        print(f"Starting monitor service (interval: {interval_minutes} minutes)")
+        print(f"Starting monitor service (interval: {interval_seconds} seconds)")
         print(f"Server URL: {self.server_url}")
         print("Press Ctrl+C to stop")
         
@@ -80,5 +78,5 @@ class MonitorService:
 
 if __name__ == "__main__":
     monitor = MonitorService()
-    monitor.run(interval_minutes=5)
+    monitor.run(interval_seconds=10)
 
