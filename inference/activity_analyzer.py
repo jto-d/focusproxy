@@ -22,7 +22,7 @@ class ActivityAnalyzer:
         
         # Default prompt for activity recognition
         default_prompt = """Analyze this screenshot and provide a single lowercase words that describes the user's primary activity. Focus on:
-        - What application or website they're using
+        - What application or website they're using (if they're using something like Youtube for recreation for example, say "relaxing")
         - What specific task or activity they appear to be engaged in
         - Their level of focus/attention (focused work, browsing, distracted, etc.)
         
