@@ -4,16 +4,12 @@
     - !<own> 00000000-0000-0065-0000-000000000064
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> 5aa0f98b-e799-448c-a2dc-cae5d04fa2a4
-    - !<own> 705b3303-959e-4f10-babe-6a25e1619be6
     - !<own> a30bf263-b481-4ea1-b418-8dc736b4e67c
     - !<own> 1ce78114-a1d3-45fd-a9ec-15f1b491dd79
-    - !<own> 8c12048c-8f09-42e1-879b-e182b146e5d8
-    - !<own> 1dfc0d2c-bd32-48e9-8056-eb9b4ed1ef5d
     - !<own> 438e9dac-5d93-42dd-a5e5-96cb083284ad
-    - !<own> a36d0a71-78d0-4fc4-b132-8cf03ddd4134
+    - !<own> 1e5bcb7e-c327-43ae-a713-f14ceb8b8268
     - !<own> 63133882-02b8-4a96-b838-9c865649ea9c
     - !<own> c850434e-bbee-4754-aee5-3d5b8eedb5d3
-    - !<own> 2707cd0f-3d3f-4882-a49b-3384e0105ade
     - !<own> c0182b2c-4bac-4b4f-8477-2409684e3913
   layers: !<Layers/267ee9a7-aff2-4f9d-9a49-f71214747d03>
     userLayers:
@@ -621,7 +617,7 @@
     []
   Components:
     []
-- !<ScriptComponent/1b157a3e-1870-43d6-8804-2d23baa8bb37>
+- !<ScriptComponent/1a9e4a79-c293-4ae1-b749-94564294d9e2>
   PrefabRemaps:
     []
   Name: Animation State Manager
@@ -633,6 +629,7 @@
     tempInput: true
     editAnimationStates: true
     states: true
+    parameters: true
     transitions: true
     showDebug: true
     debugText: true
@@ -661,30 +658,7 @@
         []
       editParameters: true
       parameters:
-        - paramName: isTyping
-          type: Bool
-          valueInt: 0
-          valueFloat: !<float> 0.000000
-          valueBool: false
-          valueTrigger: false
-        - paramName: isRelaxing
-          type: Bool
-          valueInt: 0
-          valueFloat: !<float> 0.000000
-          valueBool: false
-          valueTrigger: false
-        - paramName: isChatting
-          type: Bool
-          valueInt: 0
-          valueFloat: !<float> 0.000000
-          valueBool: false
-          valueTrigger: false
-        - paramName: isReading
-          type: Bool
-          valueInt: 0
-          valueFloat: !<float> 0.000000
-          valueBool: false
-          valueTrigger: false
+        []
       editTransitions: true
       transitions:
         []
@@ -814,17 +788,32 @@
     - ba421e49-894a-4041-a1d4-fc20d0802595: 0d6a412b-90b0-4232-acc8-eaa8d895b18e
     - efc1fc8b-eafc-459f-b2fc-10bdd68a5258: 250604ce-3480-44cf-a190-90134311b8d0
   Name: monitor_bindrig
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: -1.087712, y: -7.193225, z: -81.353958}
-    Rotation: {x: 180.000000, y: 7.880153, z: 180.000000}
-    Scale: {x: 0.506690, y: 0.425245, z: 0.245889}
+    Position: {x: -1.087712, y: -24.766567, z: -114.615906}
+    Rotation: {x: 180.000000, y: -0.000000, z: 180.000000}
+    Scale: {x: 0.350000, y: 0.350000, z: 0.350000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 882093de-7858-4e90-bd15-e04a95db33af
   Components:
     - !<own> efc1fc8b-eafc-459f-b2fc-10bdd68a5258
+- !<SceneObject/1e5bcb7e-c327-43ae-a713-f14ceb8b8268>
+  PrefabRemaps:
+    []
+  Name: Animation State Manager
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 1a9e4a79-c293-4ae1-b749-94564294d9e2
 - !<SceneObject/1fbad860-d2cc-4f57-a307-5ac38abfa448>
   PrefabRemaps:
     []
@@ -964,9 +953,9 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: -200.000000}
-    Rotation: {x: -61.591175, y: 0.000000, z: 0.000000}
-    Scale: {x: 20.000000, y: 20.000000, z: 20.000000}
+    Position: {x: -1.019772, y: -11.865738, z: -157.219696}
+    Rotation: {x: -61.096973, y: -10.153348, z: -5.558852}
+    Scale: {x: 10.000000, y: 10.000000, z: 10.000000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 7e9315b2-40bf-475a-81b9-70627851b95b
@@ -1690,7 +1679,7 @@
   PrefabRemaps:
     []
   Name: Bitmoji Joint Attachment
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2267,7 +2256,7 @@
     - fc530e67-51dc-4b55-8306-a92acdd025f6: 43126ca5-16da-40f9-82b7-c7a8926063bb
     - fe66bb72-6c90-42c5-bc72-2915d91b4804: fa0dcbdf-ddc9-4890-90e2-d81f925fe239
   Name: SpectaclesInteractionKit
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2560,21 +2549,6 @@
       BlendMode: Default
       ScaleMode: Multiply
       PlaybackMode: Loop
-- !<SceneObject/705b3303-959e-4f10-babe-6a25e1619be6>
-  PrefabRemaps:
-    []
-  Name: Animation State Manager
-  Enabled: false
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> e259e255-20dc-44e9-aa88-85d550da433e
 - !<SceneObject/71dbdbcb-fedd-46c0-adcb-e1f2e8b92f5d>
   PrefabRemaps:
     []
@@ -3043,7 +3017,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: -50.000000, z: -216.542679}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 0.500000, y: 0.500000, z: 0.500000}
     HasSegmentScaleCompensation: false
   Children:
     []
@@ -3185,7 +3159,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.138950, y: -0.397799, z: 0.248388}
+    Position: {x: 0.138950, y: -0.158878, z: -0.929654}
     Rotation: {x: 90.000023, y: -0.000000, z: 24.175512}
     Scale: {x: 1.200000, y: 1.200000, z: 1.200000}
     HasSegmentScaleCompensation: false
@@ -3363,21 +3337,6 @@
     []
   Components:
     - !<own> f26bdcd6-fb97-4f5d-a4da-24cdede601d2
-- !<SceneObject/a36d0a71-78d0-4fc4-b132-8cf03ddd4134>
-  PrefabRemaps:
-    []
-  Name: Animation State Manager
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> 1b157a3e-1870-43d6-8804-2d23baa8bb37
 - !<SceneObject/a4be667c-356e-4cf4-81ef-21e3e55cb1c2>
   PrefabRemaps:
     []
@@ -3715,6 +3674,9 @@
   Children:
     - !<own> f0bb2dbd-7f45-4c39-b562-8e8229ebc84d
     - !<own> d1cbcae0-4e2e-4156-8d09-9474b3e04b96
+    - !<own> 8c12048c-8f09-42e1-879b-e182b146e5d8
+    - !<own> 2707cd0f-3d3f-4882-a49b-3384e0105ade
+    - !<own> 1dfc0d2c-bd32-48e9-8056-eb9b4ed1ef5d
   Components:
     []
 - !<ScriptComponent/b5aaba66-daad-45ba-affe-70458da46759>
@@ -3729,9 +3691,10 @@
     {}
   ScriptInputs:
     "":
-      animManager: !<reference.ScriptComponent> 1b157a3e-1870-43d6-8804-2d23baa8bb37
-      currentState: typing
+      animManager: !<reference.ScriptComponent> 1a9e4a79-c293-4ae1-b749-94564294d9e2
+      currentState: chatting
       bookObject: !<reference.SceneObject> 2707cd0f-3d3f-4882-a49b-3384e0105ade
+      monitorObject: !<reference.SceneObject> 1dfc0d2c-bd32-48e9-8056-eb9b4ed1ef5d
   ScriptTypes:
     "":
       {}
@@ -4181,7 +4144,7 @@
   PrefabRemaps:
     []
   Name: NetworkReceiver
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4432,7 +4395,7 @@
   Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 18.196430, z: 0.000000}
+    Position: {x: 0.000000, y: 26.374065, z: -93.010643}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
     Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
     HasSegmentScaleCompensation: false
@@ -4776,62 +4739,6 @@
     - !<own> 5a2ca1a2-f292-4079-aebb-f491bb9f5bf5
   Components:
     []
-- !<ScriptComponent/e259e255-20dc-44e9-aa88-85d550da433e>
-  PrefabRemaps:
-    []
-  Name: Animation State Manager
-  Enabled: true
-  ScriptAsset: !<reference> a36e70df-3e7b-4dee-9510-ee7bcb2ff77c
-  ScriptInputsDefault:
-    tempClip: true
-    advanced: true
-    tempInput: true
-    editAnimationStates: true
-    states: true
-    transitions: true
-    showDebug: true
-    debugText: true
-    displayParameters: true
-    displayStates: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      tempClip:
-        clipName: ""
-        threshold: !<float> 0.000000
-      advanced: false
-      tempInput:
-        paramName: ""
-        type: Trigger
-        funcInt: Equal
-        funcFloat: IsLess
-        funcBool: IsLess
-        valueInt: 0
-        valueFloat: !<float> 0.000000
-      animationPlayer: !<reference.AnimationPlayer> 70104602-20f1-499d-a1b8-da2f94b04620
-      editAnimationStates: true
-      createStatesFromClips: true
-      states:
-        []
-      editParameters: true
-      parameters:
-        - paramName: isTyping
-          type: Bool
-          valueInt: 0
-          valueFloat: !<float> 0.000000
-          valueBool: false
-          valueTrigger: false
-      editTransitions: true
-      transitions:
-        []
-      showDebug: false
-      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-      displayParameters: false
-      displayStates: false
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/e2fc3a65-8fc7-4728-9cf5-1ddaf73b7209>
   PrefabRemaps:
     []
@@ -5079,7 +4986,7 @@
   PrefabRemaps:
     []
   Name: RedPanda
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}

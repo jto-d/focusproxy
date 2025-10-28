@@ -63,7 +63,8 @@ class MonitorService:
     
     def run(self, interval_minutes: int = 5):
         """Run the monitor continuously"""
-        interval_seconds = interval_minutes * 60
+        # interval_seconds = interval_minutes * 60
+        interval_seconds = 20
         
         print(f"Starting monitor service (interval: {interval_minutes} minutes)")
         print(f"Server URL: {self.server_url}")

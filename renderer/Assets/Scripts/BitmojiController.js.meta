@@ -30,6 +30,7 @@
     animManager: false
     bookObject: false
     currentState: false
+    monitorObject: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -38,6 +39,7 @@
     - animManager: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       currentState: idle
       bookObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      monitorObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     -
       {}
