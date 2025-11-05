@@ -7,3 +7,4 @@ small todos for final version
 - more possible activites?
 
 from class demos
+- "killing time" for the other pair
