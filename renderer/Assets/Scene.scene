@@ -4,6 +4,7 @@
     - !<own> 00000000-0000-0065-0000-000000000064
     - !<own> 0005641c-028d-459a-0000-000000014b4d
     - !<own> 5aa0f98b-e799-448c-a2dc-cae5d04fa2a4
+    - !<own> d42892e6-cec3-44d6-bb4f-3332967cbc08
     - !<own> a30bf263-b481-4ea1-b418-8dc736b4e67c
     - !<own> 1ce78114-a1d3-45fd-a9ec-15f1b491dd79
     - !<own> 438e9dac-5d93-42dd-a5e5-96cb083284ad
@@ -2084,8 +2085,6 @@
   ScriptAsset: !<reference> 7a3c78c1-4ff4-41a1-9f38-a2b9e6360f03
   ScriptInputsDefault:
     bitmojiType: true
-    friendsComponent: true
-    friendIndex: true
     autoDownload: true
     renderOrder: true
     castShadow: true
@@ -2096,8 +2095,8 @@
   ScriptInputs:
     "":
       bitmojiType: !<float> 0.000000
-      friendsComponent: !<reference.Component> 00000000-0000-0000-0000-000000000000
-      friendIndex: 0
+      friendsComponent: !<reference.Component> ecedf0fa-16ef-461b-b3de-7be6fc30dbde
+      friendIndex: 1
       mixamoAnimation: false
       autoDownload: true
       renderOrder: 0
@@ -3803,6 +3802,7 @@
     "":
       serviceModule: !<reference.InternetModule> 9ae42eea-c8cc-4eb5-b689-8d538e92aa2d
       apiEndpoint: "https://focusproxy-production.up.railway.app/activity"
+      targetComputer: "B"
   ScriptTypes:
     "":
       {}
@@ -3870,35 +3870,45 @@
     - 1853a9a3-3e68-4170-8380-5e11b1b203a7: 3d1358da-03ba-4073-aeda-6384c9904f4c
     - 19bfe43b-0ce9-45ad-af99-e2c0808b3bc8: d85377cf-70ca-4bda-a173-de66f75af291
     - 1c2d0315-5c80-4a9c-a463-e8301d16d92e: 4a8ea685-7c11-4167-b9f9-084ccfb3a72a
+    - 1dfc0d2c-bd32-48e9-8056-eb9b4ed1ef5d: 3f59e698-10ce-4d2d-a4e2-6867ece55c53
     - 1ff64f1b-1258-4604-99ca-06a791d27dd8: cfb91b45-0910-4191-bf07-c5b34d51973f
     - 204945c9-813a-429a-beab-9e9ba37b86b4: b2c0a7b5-880b-4f8d-a5cc-c9bff56464c9
     - 2508e7be-687b-415c-808e-b573ca6fdf03: e5285061-b3df-4cfa-920e-6f343680a102
     - 26fca35f-569a-44c0-938f-fdecd4bc11d3: f6a9dd97-819d-4816-ab96-6123c220c918
+    - 2707cd0f-3d3f-4882-a49b-3384e0105ade: 95825f9b-2d7c-45ef-98b6-2fad72989387
     - 2b2c63bf-0f03-4d02-a22f-74636bf863f2: 1079cf98-8db5-4d00-a350-3748fced5f75
     - 2e8ea66b-e647-464d-9af9-4fad06e23594: 9bfde78b-166a-4caa-ae5f-f32773abec15
     - 2fa635af-7bc2-4fa4-ab74-5fe187b95e47: ddcd23cf-b659-4255-a0d4-8b80df0e14a8
     - 2fc895f4-ff6a-499b-84bb-f17f14ba49d4: 5e912f64-ba81-4200-8b31-9ed09d5e2a5e
+    - 31816311-13c1-4c8f-aec0-f5f41cdeb6d9: 573b1e8c-762a-4c44-b806-afd3ecf6c401
     - 3472e01f-faa9-4a2b-a5ef-e0d1e163e67e: 5d028dae-df52-424c-9ae1-5d8e77f913a3
     - 354fcc67-7b8c-4bc9-9071-2184bc97affc: db22a1e9-8854-48e0-8076-0b2b6348b5db
     - 37b64447-caaf-4593-b00c-57c2905e8da9: aa5d36ac-4d94-48f0-ab65-572dcbf08d26
     - 38c1cb68-632a-4f4f-abd3-f28031b9e9b6: 4438aa42-0023-4c13-a70b-2a857b27dd41
     - 3a4c9353-cf82-4c1c-8dfc-a32b837cdd87: 0cba0639-8bfe-4f78-b419-5923aa784a48
     - 3e6d9be9-448b-4ca2-87a1-2d94a7116d1c: 53116669-b57b-4427-9764-2256ffec5959
+    - 3fd7cc13-b8ad-4b1c-9aab-2e78f22778cf: 3c9f399b-1dbf-48bc-b3cb-05ffdad5bd1c
     - 3ff8b4fb-129e-4936-9451-f07430c9143e: 04a57ea0-c713-48b6-96a3-3c758489e43a
+    - 4183750b-4635-48bd-802c-2f3c3e10228b: 8701d782-b5e4-4695-a03d-5ffbc42376da
     - 460705e0-f736-4621-a9ed-e3216e125eeb: 60177e45-e788-455f-8e43-4e9270fc053b
     - 499da03e-297d-4455-ac20-84fb9a1cacf0: 6cad87a2-d775-4a45-99fd-f81d9eec734d
     - 4ecfa84f-5d6b-46b5-b354-41a80276c223: 54a66c8a-30b0-4572-940d-389cb4e30ee6
+    - 4f496287-b16b-436a-88a5-661a89742d5f: c27421af-5551-4e8b-a2ac-ff5750d6122f
     - 4f62da0f-2df2-4ee9-a50b-5015a5cf88cf: 485ecc61-5042-4de6-9f1f-33ab83c51145
     - 505f6f25-833b-471a-aa24-035691bb1c70: 9877b53a-1a19-4f33-b903-787666045f77
     - 5135cab5-f020-4910-b46f-20da04264b31: 36390ff1-0c94-4817-aee3-6a866cfe41b2
+    - 516158eb-17bf-4c09-9f51-42bc5f0e29ea: ba5860b7-b9f6-47f4-800e-ca8e0972d521
     - 5388e63c-db06-4173-902f-48eb875e80dc: abb2d216-68c3-4402-b6b0-13ef375c50c8
     - 57eb443b-51de-461e-a22e-877bb516b06a: c86c38a5-a07e-4585-88e0-10f9437fd4fb
+    - 594585c9-38a6-45ce-a88e-2fdaafc47678: d30ba5d4-33a6-42eb-88c2-7da1045b7b1a
     - 5dd64dd8-4aec-4965-9a30-170d02653475: d0606adf-d50c-484f-9ce3-aa55ea0283be
     - 60493062-1610-4631-91be-48e5f03268fb: ea70ab5f-2810-4233-9c57-404c94298be6
     - 609e171e-63c7-44c6-a80c-b9d39f541d5e: 0625eac9-0d5c-4fec-b79a-cac4a06346b3
     - 6f7c36c1-2af0-4c76-8c83-edbef4f7105a: 685adf15-a205-428f-b824-caa264260793
+    - 70104602-20f1-499d-a1b8-da2f94b04620: 35637dd7-1867-46d6-98d2-ae6df8ab9b95
     - 722441c6-b6ca-4e9e-818f-b6fc88749a46: 35275820-89cc-4f59-afbc-e4fe4d4fe540
     - 76818324-6962-4590-9020-8ede2f64f1e9: 6b75496e-61b6-4c41-899c-e6d84943e12b
+    - 7e9315b2-40bf-475a-81b9-70627851b95b: 31708a10-4a2c-4591-89e0-6c736bc83856
     - 7ec69103-0ad7-4538-bf93-d43e44540edf: e07a7bfa-c1ef-400b-9fd7-b87e3d9f03c0
     - 805cb36d-3183-4eb7-9ecf-ffb40a1f36c3: 97b51732-ce16-468a-b966-8deb260a5b8a
     - 81ed9c02-4d3f-453f-84b8-e2ed06aac207: 415452cb-73b9-4566-9e73-57f9a474a64e
@@ -3908,21 +3918,29 @@
     - 85cd7530-44a7-49dd-a448-2abe31d4c0a0: bbc08b42-bc05-40b6-93e4-18a099f0cfe7
     - 87dda30c-5d33-4245-ab51-19a02c9afa93: 93dd1b8f-5c3c-43db-9067-18a8e7e73dbd
     - 881ecb9c-7e66-499e-a122-aa3b0d47de8f: c243bbc2-faf8-463e-ada0-3c77263fd2db
+    - 882093de-7858-4e90-bd15-e04a95db33af: 6c50c4b8-81b2-46fd-aa14-e0e398bbec5e
+    - 8c12048c-8f09-42e1-879b-e182b146e5d8: 0cbd626a-1e2b-40bb-80f2-742c88ca1f0e
     - 8ce3abd4-906e-47fa-afbd-1092394595e1: 17e82d26-1cc5-4f53-97e5-66e4e281c7eb
+    - 8eb199dc-ac6f-4814-a401-e8c5a5e4abb5: 3c335fd0-4c77-4fb0-b1c9-325818d3df53
     - 8ffbe3b7-db13-46ca-9eff-8f07ee8f5938: 610087b4-9d7f-42f0-8c37-1a8ffc6d124f
     - 934bc984-3267-41d4-b9ec-a9d98519e18c: b33c7852-27aa-470f-99f1-455a803a2c6d
     - 93d93a16-6ca8-47b8-96ea-aef5ff4f219a: f91dd741-e6a2-4318-b110-136f47a15c78
+    - 93de997c-ede8-4027-965c-0bd2fb679566: e0c622ef-50b6-4fd2-9783-d8f756461743
     - 940f113b-7642-44fd-bf14-af6b2474f78b: 8c9a0100-dbd9-465a-82c4-0f7d73d12ee4
     - 96c9151e-4d3e-4d7c-887a-a98e335abcbc: f88666ec-06a9-4900-9708-52f22111b5f7
     - 9912c6e4-abcc-4f32-a2e3-24421f38933e: 91c93de1-7002-4b2a-87d6-9ce5fb17c7f3
     - 992b4177-ee3e-4218-9ea6-33469a308143: bce83481-1a01-498f-9d5e-90ad92a00a57
+    - 9f046c3c-b107-4558-a07f-13ea2d4c47d8: 81e85d44-3961-4ae7-98c2-9172cebbe7bf
     - a5c438ce-944c-4666-aa55-f78eb2af53bd: 8fd7866c-8938-4f9b-959b-04668bfb287c
     - a653baaa-de12-4520-b6bc-ad290ee58479: 9f9aca68-19c8-4b98-baea-c2768055aaf7
+    - aa0d7ca5-fa58-4755-9f0b-9e5beaa432f9: 99ab5014-d6b5-4176-835f-90154322be1b
+    - ab617990-3874-4f07-9329-9cde6882da07: 69379ae0-0a14-42b7-a167-20aa2708d45c
     - ae44a696-cb5a-4fc1-90f3-ad0885ef6149: c37e7d8b-ba6c-427d-adab-b9021ddbe746
     - b42fc24c-16cd-45b8-804a-f70cc928fd25: 0e9b476d-2af4-4e10-9cb8-ff3a25b0c200
     - b7b3501c-c389-4c9a-b66c-b947553d453d: e453b296-8273-4ca0-be4d-95c3eb7576bb
     - b9910884-4cfc-4778-b9e8-b3e126f6038c: 2b2c1c0c-971b-4e47-adac-4b427db6e1e1
     - ba1b016d-4662-4ddd-b7ff-38eea93d339e: 641d977d-942c-4960-95fc-e42165c33128
+    - ba421e49-894a-4041-a1d4-fc20d0802595: b4d652e4-4a3b-478b-9129-a2086efdc39f
     - bd83e1f5-395d-489c-94c5-3eab5d3e38ef: f213ecb8-7ff0-4fac-ad9a-eacb9a4a9fe4
     - c0182b2c-4bac-4b4f-8477-2409684e3913: a32e5d42-367d-4431-abfb-7c67155f06ba
     - c0505058-5e1d-4151-abc6-45c06947f47e: 10e0c7ff-5307-4d4e-aef5-ef1ce7fa415a
@@ -3938,6 +3956,7 @@
     - d153a04b-3f75-4173-8995-61b6935a37ba: dceb801e-7803-4fee-9dc4-92fe3afaf416
     - d1cbcae0-4e2e-4156-8d09-9474b3e04b96: 39c3a6ad-6e7d-494b-8341-390c5da35609
     - d3ea78e4-1eaa-4876-89ab-8eccf254001e: 58f031ba-1920-4e67-b020-5a70b687410e
+    - d42892e6-cec3-44d6-bb4f-3332967cbc08: ec5cbb3b-1652-4bff-93fe-84805213eae4
     - d84437aa-19f5-41c9-8819-b7f831f4283f: 03906cf7-06c1-4f5a-b6af-470e40c3c61c
     - d8bbf179-e22b-46c0-ad58-5ee8604ab61a: 5747b453-f68d-48a9-b2c6-6bf82dbc850f
     - daacfbb1-4d9b-4ae1-b227-8b51fef6ef27: defa3e70-bec7-4b4f-bc58-d6f4f06b224a
@@ -3947,8 +3966,10 @@
     - e47882aa-bdd6-4346-8f22-e04b7a61a64c: 80470a56-aea5-4260-b823-187b3e458295
     - e505d537-1c52-419f-a692-14759e277d98: fcc0171f-ba73-4799-bebf-95e1048d72af
     - ebbfc9ce-b9d1-4b72-b4d8-90568bb4ead9: 3c795627-538e-4471-bf17-aa04d07e48f8
+    - ecedf0fa-16ef-461b-b3de-7be6fc30dbde: bc6f70e8-9624-4969-a590-b93916573c80
     - ed2d825a-0af7-4673-8cf0-ca4b10522e75: 5c8c04d8-4608-4198-9b9f-b1bd7862408c
     - ee14c898-a8e2-4800-9288-998be607e7b5: 31512500-ac92-4236-8f92-861e7d99d8ce
+    - efc1fc8b-eafc-459f-b2fc-10bdd68a5258: bfe2203f-a8d4-43b0-b090-4c8243326605
     - f0bb2dbd-7f45-4c39-b562-8e8229ebc84d: 0eb52ed9-3c81-49cb-a578-4997ea892bac
     - f15bfc5a-e562-4cc6-b7ca-5a04788d6b58: 4848cba4-14d4-45c0-a21d-054893561941
     - f2192258-f287-4c4c-be49-74c203a0a0a8: 4c0e2063-ac80-40c5-b52e-5ab7b82be66a
@@ -4441,6 +4462,21 @@
     - !<own> ba1b016d-4662-4ddd-b7ff-38eea93d339e
   Components:
     []
+- !<SceneObject/d42892e6-cec3-44d6-bb4f-3332967cbc08>
+  PrefabRemaps:
+    []
+  Name: FriendsComponent
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ecedf0fa-16ef-461b-b3de-7be6fc30dbde
 - !<SceneObject/d491b31f-c593-49a0-932a-b8bbe817b1bf>
   PrefabRemaps:
     []
@@ -4871,6 +4907,30 @@
     - !<own> cc851f59-7d95-4dbe-a9c0-c336f5593682
   Components:
     []
+- !<ScriptComponent/ecedf0fa-16ef-461b-b3de-7be6fc30dbde>
+  PrefabRemaps:
+    []
+  Name: FriendsComponent
+  Enabled: true
+  ScriptAsset: !<reference> 06b5dbef-c750-4ff6-b606-5ea63e8f9369
+  ScriptInputsDefault:
+    replyFriendsOnly: true
+    showWithoutBitmoji: true
+    filters: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      typeOfSorting: 0
+      pinBFF: false
+      bestFriendsFirst: false
+      replyFriendsOnly: false
+      showWithoutBitmoji: false
+      filters:
+        []
+  ScriptTypes:
+    "":
+      {}
 - !<ScriptComponent/ed2d825a-0af7-4673-8cf0-ca4b10522e75>
   PrefabRemaps:
     []

@@ -1,12 +1,18 @@
 //@input Asset.InternetModule serviceModule
 //@input string apiEndpoint
+//@input string targetComputer
 
 var pollInterval = 10.0;
 var lastPoll = 0.0;
 
 function pollActivity() {
     var req = RemoteServiceHttpRequest.create();
-    req.url = script.apiEndpoint;
+    var endpoint = script.apiEndpoint;
+    if (script.targetComputer) {
+        var separator = endpoint.indexOf('?') === -1 ? '?' : '&';
+        endpoint = endpoint + separator + 'computer=' + script.targetComputer;
+    }
+    req.url = endpoint;
     req.method = RemoteServiceHttpRequest.HttpRequestMethod.Get;
     
     script.serviceModule.performHttpRequest(req, function (res) {

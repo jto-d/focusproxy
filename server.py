@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-current_activity = {"state": "idle"}
+current_activity = {"A": {"state": "idle"}, "B": {"state": "idle"}}
 
 @app.route('/', methods=['GET'])
 def get_root():
@@ -10,13 +10,19 @@ def get_root():
 
 @app.route('/activity', methods=['GET'])
 def get_activity():
+  computer = request.args.get('computer')
+  if computer and computer in current_activity:
+    return jsonify(current_activity[computer])
   return jsonify(current_activity)
 
 @app.route('/activity', methods=['POST'])
 def set_activity():
   data = request.get_json()
+  computer = data.get("computer", "A")
+  if computer not in current_activity:
+    return jsonify(error="Invalid computer ID. Must be 'A' or 'B'"), 400
   if "state" in data:
-    current_activity["state"] = data["state"]
+    current_activity[computer]["state"] = data["state"]
   return jsonify(success=True)
 
 if __name__ == '__main__':

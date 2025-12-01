@@ -1,5 +1,6 @@
 import os
 import time
+import argparse
 import mss
 from datetime import datetime
 from io import BytesIO
@@ -12,7 +13,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class MonitorService:
-    def __init__(self, screenshots_dir: str = "screenshots"):
+    def __init__(self, computer_id: str = "A", screenshots_dir: str = "screenshots"):
+        self.computer_id = computer_id
         self.screenshots_dir = screenshots_dir
         self.api_key = os.getenv('AZURE_OPENAI_API_KEY')
         self.endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')
@@ -49,12 +51,12 @@ class MonitorService:
             
             response = requests.post(
                 f"{self.server_url}/activity",
-                json={"state": activity},
+                json={"computer": self.computer_id, "state": activity},
                 timeout=30
             )
             
             if response.status_code == 200:
-                print(f"[{datetime.now()}] Posted to server: {activity}")
+                print(f"[{datetime.now()}] Posted to server: {activity} (computer {self.computer_id})")
             else:
                 print(f"[{datetime.now()}] Error posting: {response.status_code}")
                 
@@ -64,7 +66,7 @@ class MonitorService:
     def run(self, interval_seconds: int = 60):
         """Run the monitor continuously"""
         
-        print(f"Starting monitor service (interval: {interval_seconds} seconds)")
+        print(f"Starting monitor service for computer {self.computer_id} (interval: {interval_seconds} seconds)")
         print(f"Server URL: {self.server_url}")
         print("Press Ctrl+C to stop")
         
@@ -77,6 +79,13 @@ class MonitorService:
 
 
 if __name__ == "__main__":
-    monitor = MonitorService()
-    monitor.run(interval_seconds=10)
+    parser = argparse.ArgumentParser(description='Monitor computer activity and post to server')
+    parser.add_argument('computer', nargs='?', default='A', choices=['A', 'B'],
+                        help='Computer ID (A or B, defaults to A)')
+    parser.add_argument('--interval', type=int, default=10,
+                        help='Interval between captures in seconds (default: 10)')
+    args = parser.parse_args()
+    
+    monitor = MonitorService(computer_id=args.computer)
+    monitor.run(interval_seconds=args.interval)
 
