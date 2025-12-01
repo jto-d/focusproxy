@@ -18,7 +18,7 @@ class MonitorService:
         self.screenshots_dir = screenshots_dir
         self.api_key = os.getenv('AZURE_OPENAI_API_KEY')
         self.endpoint = os.getenv('AZURE_OPENAI_ENDPOINT')
-        self.server_url = os.getenv('SERVER_URL', 'https://focusproxy-production.up.railway.app')
+        self.server_url = os.getenv('SERVER_URL', 'https://focusproxy.vercel.app/')
         
         if not self.api_key or not self.endpoint:
             raise ValueError("Please set AZURE_OPENAI_API_KEY and AZURE_OPENAI_ENDPOINT environment variables")
