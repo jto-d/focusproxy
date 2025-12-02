@@ -29,6 +29,7 @@
   ScriptInputsHidden:
     apiEndpoint: false
     serviceModule: false
+    targetComputer: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -36,6 +37,7 @@
   DefaultScriptInputs:
     - serviceModule: !<reference.InternetModule> 00000000-0000-0000-0000-000000000000
       apiEndpoint: ""
+      targetComputer: ""
   ScriptTypes:
     -
       {}
